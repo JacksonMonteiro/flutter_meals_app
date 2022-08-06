@@ -2,13 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:meals/models/category.dart';
 
 class CategoriesMealsView extends StatelessWidget {
-  final Category category;
-
-  const CategoriesMealsView({Key? key, required this.category})
-      : super(key: key);
+  const CategoriesMealsView({
+    Key? key,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    final category = ModalRoute.of(context)?.settings.arguments as Category;
     // final MediaQueryData mQuery = MediaQuery.of(context);
 
     AppBar appBar = AppBar(
