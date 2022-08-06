@@ -5,7 +5,7 @@ class CategoriesMealsView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final MediaQueryData mQuery = MediaQuery.of(context);
+    // final MediaQueryData mQuery = MediaQuery.of(context);
 
     AppBar appBar = AppBar(
       title: const Text(
@@ -17,8 +17,8 @@ class CategoriesMealsView extends StatelessWidget {
       backgroundColor: Theme.of(context).colorScheme.primary,
     );
 
-    final double availableHeight =
-        mQuery.size.height - appBar.preferredSize.height - mQuery.padding.top;
+    // final double availableHeight =
+    //     mQuery.size.height - appBar.preferredSize.height - mQuery.padding.top;
 
     return Scaffold(
       appBar: appBar,
