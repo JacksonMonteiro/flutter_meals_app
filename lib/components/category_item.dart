@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:meals/models/category.dart';
@@ -23,7 +24,10 @@ class CategoryItem extends StatelessWidget {
         ),
         borderRadius: BorderRadius.circular(16),
       ),
-      child: Text(category.title),
+      child: Text(
+        category.title,
+        style: Theme.of(context).textTheme.titleMedium,
+      ),
     );
   }
 }

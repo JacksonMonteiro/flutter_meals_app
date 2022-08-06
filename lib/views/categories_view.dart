@@ -1,7 +1,4 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:meals/components/category_item.dart';
 import 'package:meals/data/dummy_data.dart';
 
@@ -13,7 +10,13 @@ class CategoriesView extends StatelessWidget {
     final mQuery = MediaQuery.of(context);
 
     AppBar appBar = AppBar(
-      title: const Text('Vamos cozinhar'),
+      title: const Text(
+        'Vamos cozinhar',
+        style: TextStyle(
+          color: Colors.white,
+        ),
+      ),
+      backgroundColor: Theme.of(context).colorScheme.primary,
     );
 
     final availableHeight =
@@ -22,6 +25,7 @@ class CategoriesView extends StatelessWidget {
     return Scaffold(
       appBar: appBar,
       body: GridView(
+        padding: const EdgeInsets.all(16),
         gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
           maxCrossAxisExtent: mQuery.size.width * 0.5,
           childAspectRatio: 3 / 2,
