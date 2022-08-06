@@ -10,15 +10,23 @@ class CategoriesView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final mQuery = MediaQuery.of(context);
+
+    AppBar appBar = AppBar(
+      title: const Text('Vamos cozinhar'),
+    );
+
+    final availableHeight =
+        mQuery.size.height - appBar.preferredSize.height - mQuery.padding.top;
+
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Vamos cozinhar'),
-      ),
+      appBar: appBar,
       body: GridView(
         gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
-          maxCrossAxisExtent: MediaQuery.of(context).size.width * 0.45,
+          maxCrossAxisExtent: mQuery.size.width * 0.5,
           childAspectRatio: 3 / 2,
-          crossAxisSpacing: MediaQuery.of(context).size.width * 0.1,
+          crossAxisSpacing: mQuery.size.width * 0.025,
+          mainAxisSpacing: (availableHeight) * 0.025,
         ),
         children: dummyCategories
             .map((category) => CategoryItem(category: category))
