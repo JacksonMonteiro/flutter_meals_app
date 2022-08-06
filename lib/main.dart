@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:meals/views/categories_view.dart';
 
 void main() => runApp(const MyApp());
 
@@ -11,7 +12,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Vamos cozinhar',
       theme: ThemeData(useMaterial3: true, primarySwatch: Colors.red),
-      home: const MyHomePage(),
+      home: CategoriesView(),
     );
   }
 }
