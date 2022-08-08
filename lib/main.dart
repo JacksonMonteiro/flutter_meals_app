@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:meals/utils/app_routes.dart';
 import 'package:meals/views/categories_meals_view.dart';
 import 'package:meals/views/categories_view.dart';
+import 'package:meals/views/meal_detail_view.dart';
 
 void main() => runApp(const MyApp());
 
@@ -31,6 +32,7 @@ class MyApp extends StatelessWidget {
       routes: {
         AppRoutes.home: (context) => const CategoriesView(),
         AppRoutes.categoriesMeals: (context) => const CategoriesMealsView(),
+        AppRoutes.mealDetail: (context) => const MealDetailView(),
       },
     );
   }

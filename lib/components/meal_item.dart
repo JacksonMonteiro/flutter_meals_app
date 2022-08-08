@@ -2,20 +2,22 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:meals/models/meal.dart';
+import 'package:meals/utils/app_routes.dart';
 
 class MealItem extends StatelessWidget {
   final Meal meal;
 
   const MealItem({Key? key, required this.meal}) : super(key: key);
 
-  void _selectMeal() => {};
+  void _selectMeal(BuildContext context) =>
+      {Navigator.of(context).pushNamed(AppRoutes.mealDetail, arguments: meal)};
 
   @override
   Widget build(BuildContext context) {
     final mQuery = MediaQuery.of(context);
 
     return InkWell(
-      onTap: _selectMeal,
+      onTap: () => _selectMeal(context),
       child: Card(
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(16),
