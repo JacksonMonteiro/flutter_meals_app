@@ -9,33 +9,19 @@ class CategoriesView extends StatelessWidget {
   Widget build(BuildContext context) {
     final mQuery = MediaQuery.of(context);
 
-    AppBar appBar = AppBar(
-      title: const Text(
-        'Vamos cozinhar',
-        style: TextStyle(
-          color: Colors.white,
-        ),
-      ),
-      backgroundColor: Theme.of(context).colorScheme.primary,
-    );
+    final availableHeight = mQuery.size.height - mQuery.padding.top;
 
-    final availableHeight =
-        mQuery.size.height - appBar.preferredSize.height - mQuery.padding.top;
-
-    return Scaffold(
-      appBar: appBar,
-      body: GridView(
-        padding: const EdgeInsets.all(16),
-        gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
-          maxCrossAxisExtent: mQuery.size.width * 0.5,
-          childAspectRatio: 3 / 2,
-          crossAxisSpacing: mQuery.size.width * 0.025,
-          mainAxisSpacing: (availableHeight) * 0.025,
-        ),
-        children: dummyCategories
-            .map((category) => CategoryItem(category: category))
-            .toList(),
+    return GridView(
+      padding: const EdgeInsets.all(16),
+      gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
+        maxCrossAxisExtent: mQuery.size.width * 0.5,
+        childAspectRatio: 3 / 2,
+        crossAxisSpacing: mQuery.size.width * 0.025,
+        mainAxisSpacing: (availableHeight) * 0.025,
       ),
+      children: dummyCategories
+          .map((category) => CategoryItem(category: category))
+          .toList(),
     );
   }
 }
