@@ -4,6 +4,7 @@ import 'package:meals/utils/app_routes.dart';
 import 'package:meals/views/categories_meals_view.dart';
 import 'package:meals/views/favorite_view.dart';
 import 'package:meals/views/meal_detail_view.dart';
+import 'package:meals/views/settings_view.dart';
 import 'package:meals/views/tabs_view.dart';
 
 void main() => runApp(const MyApp());
@@ -37,6 +38,7 @@ class MyApp extends StatelessWidget {
         AppRoutes.home: (context) => const TabsView(),
         AppRoutes.categoriesMeals: (context) => const CategoriesMealsView(),
         AppRoutes.mealDetail: (context) => const MealDetailView(),
+        AppRoutes.settings: (context) => const SettingsView(),
       },
     );
   }
